@@ -1,6 +1,6 @@
 from django.db import models
 from django_autoslug.fields import AutoSlugField
-
+from datetime import datetime
 
 class Categorias(models.Model):
     categoria_id = models.AutoField(primary_key=True)
@@ -21,7 +21,8 @@ class Posts(models.Model):
     slug = AutoSlugField(populate_from=('titulo',), unique=True, max_length=255, overwrite=True)
     categoria = models.ForeignKey('Categorias', null=False)
     contenido = models.TextField(null=False)
-    fecha     = models.DateField(auto_now_add=True)
+    agregado = models.DateTimeField(auto_now_add=True)
+    editado  = models.DateTimeField(auto_now=True)
 
     def __unicode__(self):
         return self.titulo
@@ -29,3 +30,7 @@ class Posts(models.Model):
     class Meta:
         verbose_name = "Entradas"
         verbose_name_plural = verbose_name
+    
+    @models.permalink
+    def get_absolute_url(self):
+        return ('view_post_detail', None, { 'slug':self.slug })

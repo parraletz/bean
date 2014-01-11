@@ -12,7 +12,7 @@ class PostForm(ModelForm):
 
 
 class PostAdmin(admin.ModelAdmin):
-    list_display = ('titulo', 'slug', 'categoria','fecha',)
+    list_display = ('titulo', 'slug', 'categoria','agregado',)
     form = PostForm
     fieldsets = [
         (' ', {'fields': ('titulo',)}),

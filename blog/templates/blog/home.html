@@ -1,0 +1,5 @@
+{% for articulo in articulo %}
+
+<a href="{{articulo.get_absolute_url}}"><h2>{{ articulo.titulo }}</h2></a>
+
+{% endfor %}
