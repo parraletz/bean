@@ -21,6 +21,7 @@ class Posts(models.Model):
     slug = AutoSlugField(populate_from=('titulo',), unique=True, max_length=255, overwrite=True)
     categoria = models.ForeignKey('Categorias', null=False)
     contenido = models.TextField(null=False)
+    fecha     = models.DateField(auto_now_add=True)
 
     def __unicode__(self):
         return self.titulo
