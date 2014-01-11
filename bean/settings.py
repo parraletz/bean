@@ -5,7 +5,7 @@ For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
 
 For the full list of settings and their values, see
-https://docs.djangoproject.com/en/1.6/ref/settings/
+https://docs.djangoproject.com/en/1.6/ref/settings/s
 """
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -13,8 +13,6 @@ import os
 from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-
-
 
 
 # Quick-start development settings - unsuitable for production
@@ -45,10 +43,12 @@ INSTALLED_APPS = (
     'django_autoslug',
     'south',
     'blog',
+    'tracking',
 
 )
 
 MIDDLEWARE_CLASSES = (
+    'tracking.middleware.VisitorTrackingMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
