@@ -1,6 +1,15 @@
 Django==1.6
 South==0.8.2
+Werkzeug==0.9.4
 django-autoslug-field==0.2.3
+django-debug-toolbar==1.0.1
+django-disqus==0.4.1
+django-extensions==1.3.2
 django-suit==0.2.5
 django-suit-redactor==0.0.2
+django-tracking2==0.1.9
+django-werkzeug-debugger-runserver==0.2
+pytz==2013.9
+six==1.5.2
+sqlparse==0.1.10
 wsgiref==0.1.2

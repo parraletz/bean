@@ -41,10 +41,12 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
+    'django.contrib.sites',
     'django_autoslug',
     'south',
     'blog',
     'tracking',
+    'disqus',
 
 )
 
@@ -63,15 +65,6 @@ ROOT_URLCONF = 'bean.urls'
 WSGI_APPLICATION = 'bean.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/1.6/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
@@ -93,7 +86,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, '../static'),
+)
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 
 
@@ -109,3 +107,7 @@ SUIT_CONFIG = {
     #HEADER
     'ADMIN_NAME': 'Admin Bean',
 }
+
+SITE_ID = 1
+DISQUS_API_KEY = 'CiqN5PGnRd067Ms8pnPLLZ3s8WhP8HoGTJHe8Ee2bZzlH1aqM58G0XXYgOBzoVKK'
+DISQUS_WEBSITE_SHORTNAME = 'qaparraletz'
