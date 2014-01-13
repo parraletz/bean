@@ -29,4 +29,4 @@ MIDDLEWARE_CLASSES += (
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 
-
+## Aqui las configuraciones del cache para el servidor interno y/o usando AWS
