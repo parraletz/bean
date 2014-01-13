@@ -3,4 +3,4 @@
 *.pyc
 *migrations*
 *.swp
-local.py
+*local.py

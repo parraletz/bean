@@ -22,7 +22,11 @@ INSTALLED_APPS += (
     'django_extensions',
 )
 
+
+## Configuracion del debug_toolbar
 INTERNAL_IPS = ("127.0.0.1", "172.16.0.3",)
 MIDDLEWARE_CLASSES += (
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
+
+
