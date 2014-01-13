@@ -3,4 +3,4 @@
 *.pyc
 *migrations*
 *.swp
-*local.py
+bean/settings/local.py
